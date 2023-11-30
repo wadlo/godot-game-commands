@@ -18,7 +18,7 @@ public abstract partial class InGameCommands : ColorRect
     private string commandPrefix = "/";
 
     [Export]
-    public Label outputLabel;
+    public RichTextLabel outputLabel;
 
     private Array<Command> commands;
 
@@ -44,9 +44,30 @@ public abstract partial class InGameCommands : ColorRect
 
     public void TextSubmitted(string text)
     {
-        outputLabel.Text += "\n" + text + "\n";
-        outputLabel.Text += EvaluateString(text).AsString().Replace("\n", "\n   ");
+        Color commandColor = new Color(1, 1, 0);
+        Color outputColor = new Color(0.8f, 0.8f, 0.8f);
+        Color textColor = new Color(1, 1, 1);
+
+        if (text.StartsWith(commandPrefix))
+        {
+            var threeSpaces = "   ";
+            outputLabel.PushColor(commandColor);
+            outputLabel.AddText("\n> " + text + "\n");
+            outputLabel.PushColor(outputColor);
+            outputLabel.AddText(
+                threeSpaces
+                    + EvaluateString(text).AsString().Replace("\n", "\n" + threeSpaces)
+                    + "\n"
+            );
+        }
+        else
+        {
+            outputLabel.PushColor(textColor);
+            outputLabel.AddText("\n" + text + "\n");
+        }
+
         commandLine.Text = "";
+        Refresh(commandLine.Text);
     }
 
     public void Refresh(string newText)
