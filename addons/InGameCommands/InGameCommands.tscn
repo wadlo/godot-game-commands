@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqhjbtm7ahte5"]
+
+[ext_resource type="Script" path="res://addons/InGameCommands/Example/InGameCommandsExample.cs" id="1_6da8w"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="CommandBar" type="ColorRect" parent="." node_paths=PackedStringArray("commandLine", "suggestion")]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -62.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.278431)
+script = ExtResource("1_6da8w")
+commandLine = NodePath("LineEdit")
+suggestion = NodePath("LineEdit/Suggestion")
+
+[node name="LineEdit" type="LineEdit" parent="CommandBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Suggestion" type="Label" parent="CommandBar/LineEdit"]
+self_modulate = Color(0.631373, 0.631373, 0.631373, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Type /help for a list of commands"
+vertical_alignment = 1
