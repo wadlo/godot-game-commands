@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-public class SumCommand : Command
+public partial class SumCommand : Command
 {
     public override string GetName()
     {

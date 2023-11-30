@@ -4,7 +4,7 @@ using Godot.Collections;
 using Godot.NativeInterop;
 using Microsoft.VisualBasic;
 
-public abstract class Command
+public abstract partial class Command : Node
 {
     public abstract string GetName();
 

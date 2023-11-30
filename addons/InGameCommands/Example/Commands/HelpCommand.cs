@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Godot;
 
-public class HelpCommand : Command
+public partial class HelpCommand : Command
 {
     public override string GetName()
     {

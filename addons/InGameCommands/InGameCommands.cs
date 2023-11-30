@@ -16,6 +16,7 @@ public abstract partial class InGameCommands : ColorRect
 
     [Export]
     private string commandPrefix = "/";
+    private Array<Command> commands;
 
     Array<string> suggestions = new Array<string>();
 
@@ -119,5 +120,21 @@ public abstract partial class InGameCommands : ColorRect
         return ast.Evaluate();
     }
 
-    public abstract List<Command> GetCommands();
+    public Array<Command> GetCommands()
+    {
+        // Cache the commands
+        if (commands == null)
+        {
+            commands = new Array<Command>();
+            foreach (Node child in GetChildren())
+            {
+                if (child is Command)
+                {
+                    commands.Add((Command)child);
+                }
+            }
+        }
+
+        return this.commands;
+    }
 }

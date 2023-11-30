@@ -8,15 +8,4 @@ public partial class InGameCommandsExample : InGameCommands
     {
         base._Ready();
     }
-
-    public override List<Command> GetCommands()
-    {
-        var commands = new List<Command>
-        {
-            new HelpCommand(),
-            new SpawnCommand(),
-            new SumCommand()
-        };
-        return commands;
-    }
 }

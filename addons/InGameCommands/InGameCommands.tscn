@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqhjbtm7ahte5"]
+[gd_scene load_steps=5 format=3 uid="uid://dqhjbtm7ahte5"]
 
 [ext_resource type="Script" path="res://addons/InGameCommands/Example/InGameCommandsExample.cs" id="1_6da8w"]
+[ext_resource type="Script" path="res://addons/InGameCommands/Example/Commands/HelpCommand.cs" id="2_g2vp7"]
+[ext_resource type="Script" path="res://addons/InGameCommands/Example/Commands/SpawnCommand.cs" id="3_ajhs8"]
+[ext_resource type="Script" path="res://addons/InGameCommands/Example/Commands/SumCommand.cs" id="4_8pbhp"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="InGameCommands" type="CanvasLayer"]
 
 [node name="CommandBar" type="ColorRect" parent="." node_paths=PackedStringArray("commandLine", "suggestion")]
 anchors_preset = 12
@@ -41,3 +44,12 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Type /help for a list of commands"
 vertical_alignment = 1
+
+[node name="HelpCommand" type="Node" parent="CommandBar"]
+script = ExtResource("2_g2vp7")
+
+[node name="SpawnCommand" type="Node" parent="CommandBar"]
+script = ExtResource("3_ajhs8")
+
+[node name="SumCommand" type="Node" parent="CommandBar"]
+script = ExtResource("4_8pbhp")

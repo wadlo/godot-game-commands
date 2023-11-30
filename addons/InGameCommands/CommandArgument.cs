@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 public class CommandArgument
 {
     public enum CommandArgumentType
@@ -9,10 +11,16 @@ public class CommandArgument
 
     string name;
     CommandArgumentType type;
+    List<string> autocompleteValues;
 
-    public CommandArgument(string name, CommandArgumentType type)
+    public CommandArgument(
+        string name,
+        CommandArgumentType type,
+        List<string> autocompleteValues = null
+    )
     {
         this.name = name;
         this.type = type;
+        this.autocompleteValues = autocompleteValues;
     }
 }
