@@ -7,7 +7,7 @@
 
 [node name="InGameCommands" type="CanvasLayer"]
 
-[node name="CommandBar" type="ColorRect" parent="." node_paths=PackedStringArray("commandLine", "suggestion")]
+[node name="CommandBar" type="ColorRect" parent="." node_paths=PackedStringArray("commandLine", "suggestion", "outputLabel")]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -22,6 +22,7 @@ color = Color(0, 0, 0, 0.278431)
 script = ExtResource("1_6da8w")
 commandLine = NodePath("LineEdit")
 suggestion = NodePath("LineEdit/Suggestion")
+outputLabel = NodePath("../ColorRect/Label")
 
 [node name="LineEdit" type="LineEdit" parent="CommandBar"]
 layout_mode = 1
@@ -53,3 +54,27 @@ script = ExtResource("3_ajhs8")
 
 [node name="SumCommand" type="Node" parent="CommandBar"]
 script = ExtResource("4_8pbhp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 422.0
+offset_bottom = -70.0
+grow_vertical = 2
+color = Color(0, 0, 0, 0.278431)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_alignment = 2
+autowrap_mode = 3

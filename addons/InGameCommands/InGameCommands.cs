@@ -16,6 +16,10 @@ public abstract partial class InGameCommands : ColorRect
 
     [Export]
     private string commandPrefix = "/";
+
+    [Export]
+    public Label outputLabel;
+
     private Array<Command> commands;
 
     Array<string> suggestions = new Array<string>();
@@ -40,7 +44,8 @@ public abstract partial class InGameCommands : ColorRect
 
     public void TextSubmitted(string text)
     {
-        GD.Print(EvaluateString(text));
+        outputLabel.Text += "\n" + text + "\n";
+        outputLabel.Text += EvaluateString(text).AsString().Replace("\n", "\n   ");
         commandLine.Text = "";
     }
 
