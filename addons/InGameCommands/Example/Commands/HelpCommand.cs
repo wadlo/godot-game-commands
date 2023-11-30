@@ -17,6 +17,19 @@ public class HelpCommand : Command
 
     public override Variant Calculate(List<Variant> arguments)
     {
-        return "Help isn't yet implemented";
+        if (arguments.Count == 0)
+        {
+            string returnValue = "Commands: \n";
+            foreach (Command command in InGameCommands.instance.GetCommands())
+            {
+                returnValue += "\t" + command.GetName() + "\n";
+            }
+            returnValue += "Type /help [command] for more help on a specific command";
+            return returnValue;
+        }
+        else
+        {
+            return "Not yet supported";
+        }
     }
 }

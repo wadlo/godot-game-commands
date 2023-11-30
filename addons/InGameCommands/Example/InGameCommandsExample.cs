@@ -7,7 +7,6 @@ public partial class InGameCommandsExample : InGameCommands
     public override void _Ready()
     {
         base._Ready();
-        TestAst.TestSpawnCommand();
     }
 
     public override List<Command> GetCommands()
