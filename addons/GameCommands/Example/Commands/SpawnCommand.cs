@@ -36,7 +36,7 @@ public partial class SpawnCommand : Command
 
         if (scene != null)
         {
-            var parent = InGameCommands.instance.GetTree().Root;
+            var parent = GameCommands.instance.GetTree().Root;
             var instantiated = scene.Instantiate();
             parent.AddChild(instantiated);
             return instantiated;

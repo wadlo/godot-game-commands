@@ -20,7 +20,7 @@ public partial class HelpCommand : Command
         if (arguments.Count == 0)
         {
             string returnValue = "Commands: \n";
-            foreach (Command command in InGameCommands.instance.GetCommands())
+            foreach (Command command in GameCommands.instance.GetCommands())
             {
                 returnValue += "   " + command.GetName() + "\n";
             }

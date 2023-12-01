@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="In Game Commands"
+run/main_scene="res://addons/GameCommands/GameCommands.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Xml.XPath;
 using Godot;
 
-public partial class InGameCommandsExample : InGameCommands
+public partial class GameCommandsExample : GameCommands
 {
     public override void _Ready()
     {

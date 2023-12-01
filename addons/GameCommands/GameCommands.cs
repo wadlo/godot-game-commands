@@ -3,7 +3,7 @@ using Godot.Collections;
 using System;
 using System.Collections.Generic;
 
-public abstract partial class InGameCommands : ColorRect
+public abstract partial class GameCommands : ColorRect
 {
     [Export]
     private LineEdit commandLine;
@@ -24,7 +24,7 @@ public abstract partial class InGameCommands : ColorRect
 
     Array<string> suggestions = new Array<string>();
 
-    public static InGameCommands instance;
+    public static GameCommands instance;
 
     public override void _Ready()
     {

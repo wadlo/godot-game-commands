@@ -21,13 +21,13 @@ public class CommandNode : AstNode
             evaluatedParameters.Add(node.Evaluate());
         }
 
-        if (InGameCommands.instance == null)
+        if (GameCommands.instance == null)
         {
             GD.Print(
-                "Error: Your scene doesn't have an InGameCommand node! Try adding the example InGameCommands.tscn to your scene."
+                "Error: Your scene doesn't have an InGameCommand node! Try adding the example GameCommands.tscn to your scene."
             );
         }
-        foreach (Command command in InGameCommands.instance.GetCommands())
+        foreach (Command command in GameCommands.instance.GetCommands())
         {
             if (command.GetName() == CommandName)
             {
