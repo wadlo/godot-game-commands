@@ -3,7 +3,7 @@ using Godot.Collections;
 using System;
 using System.Collections.Generic;
 
-public abstract partial class GameCommands : ColorRect
+public partial class GameCommands : ColorRect
 {
     [Export]
     private LineEdit commandLine;
