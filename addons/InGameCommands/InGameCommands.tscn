@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqhjbtm7ahte5"]
+[gd_scene load_steps=6 format=3 uid="uid://dqhjbtm7ahte5"]
 
 [ext_resource type="Script" path="res://addons/InGameCommands/Example/InGameCommandsExample.cs" id="1_6da8w"]
 [ext_resource type="Script" path="res://addons/InGameCommands/Example/Commands/HelpCommand.cs" id="2_g2vp7"]
+[ext_resource type="Theme" uid="uid://bma5tg87axc20" path="res://theme.tres" id="2_hmc5i"]
 [ext_resource type="Script" path="res://addons/InGameCommands/Example/Commands/SpawnCommand.cs" id="3_ajhs8"]
 [ext_resource type="Script" path="res://addons/InGameCommands/Example/Commands/SumCommand.cs" id="4_8pbhp"]
 
@@ -18,7 +19,7 @@ offset_right = -7.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0, 0, 0, 0.278431)
+color = Color(0, 0, 0, 0.533333)
 script = ExtResource("1_6da8w")
 commandLine = NodePath("LineEdit")
 suggestion = NodePath("LineEdit/Suggestion")
@@ -31,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_hmc5i")
 flat = true
 
 [node name="Suggestion" type="Label" parent="CommandBar/LineEdit"]
@@ -43,6 +45,7 @@ anchor_bottom = 1.0
 offset_left = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_hmc5i")
 text = "Type /help for a list of commands"
 vertical_alignment = 1
 
@@ -63,7 +66,7 @@ offset_top = 8.0
 offset_right = 422.0
 offset_bottom = -70.0
 grow_vertical = 2
-color = Color(0, 0, 0, 0.278431)
+color = Color(0, 0, 0, 0.533333)
 
 [node name="Label" type="RichTextLabel" parent="ColorRect"]
 layout_mode = 1
@@ -76,5 +79,6 @@ offset_right = -8.0
 offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_hmc5i")
 bbcode_enabled = true
 scroll_following = true
